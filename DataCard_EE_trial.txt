@@ -1,0 +1,36 @@
+imax 1   number of bins
+jmax *   number of processes minus 1
+kmax *   number of nuisance parameters
+---------------------------------------------------------------------------------------------------------------------------------------------
+shapes bkg_mass     Cat2    bkg_mu.root multipdf:CMS_hzg_mu_cat10_13TeV_bkgshape
+shapes hzg          Cat2    WS_VBFMVA_v2_mu_ggF_10_125.root :newPdf_mu_ggF_cat10
+shapes data_obs     Cat2    bkg_mu.root multipdf:data_obs_mu_cat10
+---------------------------------------------------------------------------------------------------------------------------------------------
+bin                    Cat2
+observation            -1
+---------------------------------------------------------------------------------------------------------------------------------------------
+bin                    Cat2     Cat2 
+process                hzg      bkg_mass
+process                0        1
+rate                   0.7735848767      1.000
+---------------------------------------------------------------------------------------------------------------------------------------------
+lumi_13TeV		   lnN         1.025       -
+Prod_XS_PDF_Alpha          lnN         1.016       -
+CMS_PU_13TeV      	   lnN         1.0052      -
+CMS_mH_BtagSF	           lnN         1.0439      -
+CMS_Ele_ID		   lnN	       1.168	   -
+CMS_hzg_trig_SF      	   lnN         1.004       -
+CMS_hzg_Pho_ID_SF          lnN         1.0182      -
+CMS_hzg_Pho_CSEV_SF        lnN         1.011       -
+CMS_hzg_scale_EE_Cat2      param       1           0.00628434
+CMS_hzg_res_EE_Cat2        param       1           0.08039197 
+roomultipdf_norm     	   flatParam
+env_pdf_mu_cat10_13TeV_bern1_p0                   flatParam
+env_pdf_mu_cat10_13TeV_bern2_p0                   flatParam
+env_pdf_mu_cat10_13TeV_bern2_p1                   flatParam
+env_pdf_mu_cat10_13TeV_bern3_p0                   flatParam
+env_pdf_mu_cat10_13TeV_lau2_h1                 flatParam
+env_pdf_mu_cat10_13TeV_exp_p1                     flatParam
+env_pdf_mu_cat10_13TeV_pow1_p1                flatParam
+
+signal group = lumi_13TeV Prod_XS_PDF_Alpha CMS_PU_13TeV CMS_mH_BtagSF CMS_Ele_ID CMS_hzg_trig_SF CMS_hzg_Pho_ID_SF CMS_hzg_Pho_CSEV_SF CMS_hzg_scale_EE_Cat2 CMS_hzg_res_EE_Cat2
